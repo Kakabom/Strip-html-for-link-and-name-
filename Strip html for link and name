@@ -1,0 +1,24 @@
+``#!/bin/bash
+
+read -p "How many link : " num
+
+counter=0
+
+until [[ "$counter" = "$num" ]] ; do                                                                     (( counter ++ ))
+    read -p "input $counter link : " link
+    first_sed=( $(echo "$link" | sed -n 's/.*href="\([^"]*\).*/\1/p') )
+
+    sec_sed=( $(echo "$link" | sed 's/<[^>]\+>//g'  | tr -d '`",' ) )
+
+    echo "$first_sed","$sec_sed"
+    echo "$first_sed","$sec_sed" >> TmpFile.txt
+
+done
+
+echo ""
+
+cat TmpFile.txt
+
+echo "" 
+
+rm TmpFile.txt``
