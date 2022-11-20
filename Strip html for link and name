@@ -1,4 +1,4 @@
-``#!/bin/bash
+#!/bin/bash
 
 read -p "How many link : " num
 
@@ -21,4 +21,4 @@ cat TmpFile.txt
 
 echo "" 
 
-rm TmpFile.txt``
+rm TmpFile.txt
