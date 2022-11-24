@@ -4,7 +4,8 @@ read -p "How many link : " num
 
 counter=0
 
-until [[ "$counter" = "$num" ]] ; do                                                                     (( counter ++ ))
+until [[ "$counter" = "$num" ]] ; do                                                                    
+    (( counter ++ ))
     read -p "input $counter link : " link
     first_sed=$(echo "$link" | sed -n 's/.*href="\([^"]*\).*/\1/p') )
 
