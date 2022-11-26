@@ -11,7 +11,10 @@ until [[ "$counter" = "$num" ]] ; do
 
     sec_sed=$(echo "$link" | sed 's/<[^>]\+>//g'  | tr -d '`",' ) )
 
+
     echo "$first_sed","$sec_sed"
+
+    #this part is not necessarily, it's done only to show all the links at the end, this of it as a log file 
     echo "$first_sed","$sec_sed" >> TmpFile.txt
 
 done
